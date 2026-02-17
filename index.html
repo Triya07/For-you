@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>For You 🌊</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -9,13 +11,13 @@
 <style>
 body {
   margin: 0;
-  height: 100vh;
+  min-height: 100vh;
   background: linear-gradient(180deg,#d9f2ff,#a6dcff,#5bb3d9,#2a6f8f);
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: 'Press Start 2P', monospace;
-  overflow: hidden;
+  overflow-x: hidden;
   color: #06324b;
 }
 
@@ -40,9 +42,10 @@ body {
 .seaweed{bottom:12%;left:18%;animation-delay:7s}
 .shell{bottom:10%;right:40%;animation-delay:8s}
 
+/* main card */
 .container{
-  width:90%;
-  max-width:560px;
+  width: 92%;
+  max-width: 560px;
   background:#eaf7ff;
   border-radius:20px;
   padding:40px 28px;
@@ -64,8 +67,15 @@ body {
   transform:translateY(0);
 }
 
-h2{font-size:18px;margin-bottom:16px}
-p{font-size:12px;line-height:2}
+h2{
+  font-size:18px;
+  margin-bottom:16px
+}
+
+p{
+  font-size:12px;
+  line-height:2
+}
 
 button{
   margin-top:28px;
@@ -78,30 +88,45 @@ button{
   cursor:pointer;
   transition:.2s;
 }
+
 button:hover{
   transform:translateY(-4px);
   box-shadow:0 5px 0 #0b4f6c;
 }
 
-.signature{margin-top:24px;font-size:10px}
+.signature{
+  margin-top:24px;
+  font-size:10px
+}
 
 /* envelope */
 .envelope{
-  width:280px;height:170px;margin:24px auto;
-  background:#c9ecff;border:4px solid #0b4f6c;border-radius:12px;
+  width:280px;
+  height:170px;
+  margin:24px auto;
+  background:#c9ecff;
+  border:4px solid #0b4f6c;
+  border-radius:12px;
   position:relative;
 }
+
 .flap{
-  position:absolute;top:0;left:0;width:100%;height:100%;
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
   background:#9fdcff;
   clip-path:polygon(0 0,50% 60%,100% 0);
   transform-origin:top;
   transition:1s;
 }
-.envelope.open .flap{transform:rotateX(180deg)}
 
+.envelope.open .flap{
+  transform:rotateX(180deg)
+}
 
-/* BIG LETTER PAPER */
+/* letter */
 .letter {
   position: absolute;
   width: 92%;
@@ -119,80 +144,73 @@ button:hover{
   justify-content: center;
 }
 
-/* show letter after opening */
 .envelope.open .letter {
   opacity: 1;
-}
-
-/* typing text on letter */
-#typingText {
-  font-size: 11px;
-  line-height: 1.9;
-  color: #06324b;
-  text-align: center;
-  white-space: pre-line;
-}
-
-/* bubbles */
-.bubble{
-  font-size:20px;
-  animation:bubble 6s linear infinite;
-}
-@keyframes bubble{
-  0%{opacity:0;transform:translateY(20px)}
-  50%{opacity:.6}
-  100%{opacity:0;transform:translateY(-30px)}
-}
-
-/* 🌊 THEME VARIATIONS */
-body.calm {
-  background: linear-gradient(180deg, #e6f7ff, #bfe9ff, #7ec8e3);
-}
-
-body.sunset {
-  background: linear-gradient(180deg, #ffd6c9, #a6dcff, #5bb3d9);
-}
-
-body.deep {
-  background: linear-gradient(180deg, #0b2c3d, #06324b, #021a26);
-  color: #d6f3ff;
-}
-
-body.deep .container {
-  background: #082f42;
-  border-color: #1b6c8f;
-}
-
-body.deep p,
-body.deep h2 {
-  color: #d6f3ff;
 }
 
 #typingText {
   min-height: 48px;
   font-size: 11px;
   line-height: 1.9;
-  margin-bottom: 18px;
-  color: #06324b;
+  text-align: center;
 }
 
-/* 📱 MAKE MOBILE LOOK LIKE DESKTOP */
+/* themes */
+body.calm {
+  background: linear-gradient(180deg, #e6f7ff, #bfe9ff, #7ec8e3);
+}
+body.sunset {
+  background: linear-gradient(180deg, #ffd6c9, #a6dcff, #5bb3d9);
+}
+body.deep {
+  background: linear-gradient(180deg, #0b2c3d, #06324b, #021a26);
+  color: #d6f3ff;
+}
+body.deep .container {
+  background: #082f42;
+  border-color: #1b6c8f;
+}
+body.deep p,
+body.deep h2 {
+  color: #d6f3ff;
+}
+
+/* 📱 MOBILE FIX (REAL FIX) */
 @media (max-width: 600px) {
+
   .container {
-    transform: scale(1.3);
-    transform-origin: center;
+    padding: 36px 22px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.9;
+  }
+
+  button {
+    font-size: 13px;
+    padding: 16px 26px;
+  }
+
+  .envelope {
+    width: 320px;
+    height: 200px;
+  }
+
+  #typingText {
+    font-size: 14px;
+  }
+
+  .pixel {
+    font-size: 22px;
   }
 }
-
-@media (max-width: 380px) {
-  .container {
-    transform: scale(1.35);
-  }
-}
-
-
-
 </style>
+
 </head>
 
 <body>
