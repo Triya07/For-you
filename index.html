@@ -176,39 +176,48 @@ body.deep h2 {
 }
 
 /* 📱 MOBILE FIX (REAL FIX) */
+/* 📱 REAL MOBILE FIX — FULL SCREEN FEEL */
 @media (max-width: 600px) {
 
+  body {
+    align-items: flex-start;     /* ⬅️ stop vertical centering */
+    padding-top: 40px;
+  }
+
   .container {
-    padding: 36px 22px;
+    width: 95vw;                 /* ⬅️ fill phone width */
+    max-width: none;             /* ⬅️ remove desktop limit */
+    padding: 40px 22px;
   }
 
   h2 {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   p {
-    font-size: 14px;
-    line-height: 1.9;
+    font-size: 15px;
+    line-height: 2;
   }
 
   button {
-    font-size: 13px;
-    padding: 16px 26px;
+    font-size: 14px;
+    padding: 16px 28px;
   }
 
   .envelope {
-    width: 320px;
-    height: 200px;
+    width: 340px;                /* ⬅️ BIG envelope */
+    height: 220px;
   }
 
   #typingText {
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .pixel {
     font-size: 22px;
   }
 }
+
 </style>
 
 </head>
