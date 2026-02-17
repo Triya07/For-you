@@ -176,42 +176,20 @@ body.deep h2 {
   color: #06324b;
 }
 
-/* 📱 MOBILE SAFETY */
+/* 📱 MAKE MOBILE LOOK LIKE DESKTOP */
 @media (max-width: 600px) {
-
   .container {
-    padding: 28px 18px;
-    max-width: 92%;
-  }
-
-  h2 {
-    font-size: 15px;
-  }
-
-  p {
-    font-size: 11px;
-    line-height: 1.8;
-  }
-
-  .envelope {
-    width: 240px;
-    height: 150px;
-  }
-
-  .letter {
-    padding: 14px;
-  }
-
-  button {
-    font-size: 10px;
-    padding: 12px 20px;
-  }
-
-  .pixel {
-    font-size: 22px;
-    opacity: 0.6;
+    transform: scale(1.3);
+    transform-origin: center;
   }
 }
+
+@media (max-width: 380px) {
+  .container {
+    transform: scale(1.35);
+  }
+}
+
 
 
 </style>
